@@ -30,5 +30,5 @@ Sinta-se à vontade para contribuir com sugestões, correções ou novos tópico
 ## Recursos Úteis
 - [Documentação Oficial do Java](https://docs.oracle.com/en/java/)
 - [Java Tutorials](https://docs.oracle.com/javase/tutorial/)
-- Curso que estou realizando [AQUI] (https://www.udemy.com/course/java-curso-completo/)
+- Curso que estou realizando [AQUI](https://www.udemy.com/course/java-curso-completo/)
 
