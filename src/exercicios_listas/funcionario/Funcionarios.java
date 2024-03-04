@@ -2,14 +2,17 @@ package exercicios_listas.funcionario;
 
 import java.util.List;
 
-public class Funcionario {
+public class Funcionarios {
     private Integer id;
-    private  String nome;
+    private String nome;
     private Double salario;
 
-    Funcionario() {};
+    Funcionarios() {
+    }
 
-    public Funcionario(Integer id, String nome, Double salario) {
+    ;
+
+    public Funcionarios(Integer id, String nome, Double salario) {
         this.id = id;
         this.nome = nome;
         this.salario = salario;
@@ -39,13 +42,15 @@ public class Funcionario {
         this.salario = salario;
     }
 
+    //MÉTODO PARA AUMENTAR O SALARIO
     public void aumentarSalario(double porcentagem) {
         salario += (salario * porcentagem) / 100;
     }
 
-    public static boolean buscaId(List<Funcionario> funcionarioList, int id) {
-        Funcionario idFuncionario = funcionarioList.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
-        return idFuncionario != null;
+    //MÉTODO PARA BUSCA NA LISTA
+    public static boolean buscaId(List<Funcionarios> funcionariosList, int id) {
+        Funcionarios idFuncionarios = funcionariosList.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+        return idFuncionarios != null;
     }
 
     @Override

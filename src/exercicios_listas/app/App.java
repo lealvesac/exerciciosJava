@@ -1,7 +1,8 @@
 package exercicios_listas.app;
 
-import exercicios_listas.funcionario.Funcionario;
-import static exercicios_listas.funcionario.Funcionario.buscaId;
+import exercicios_listas.funcionario.Funcionarios;
+
+import static exercicios_listas.funcionario.Funcionarios.buscaId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ public class App {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner input = new Scanner(System.in);
-        List<Funcionario> funcionario = new ArrayList<>();
+        List<Funcionarios> funcionario = new ArrayList<>();
 
         System.out.print("Quantos funcionários deseja registrar?: ");
         int x = input.nextByte();
@@ -41,7 +42,7 @@ public class App {
             System.out.print("Salário: R$");
             double salario = input.nextDouble();
 
-            funcionario.add(new Funcionario(id, nome, salario));
+            funcionario.add(new Funcionarios(id, nome, salario));
         }
 
         //ATUALIZAÇÃO DE SALARIO.
@@ -50,26 +51,24 @@ public class App {
         System.out.print("Informe o ID do funcionário que deseja aumentar o salario: ");
         int id = input.nextInt();
 
-        Funcionario idFuncionario = funcionario.stream().filter(y -> y.getId() == id).findFirst().orElse(null);
-        if (idFuncionario == null) {
-                System.out.println("Esse funcionário não existe!");
+        Funcionarios idFuncionarios = funcionario.stream().filter(y -> y.getId() == id).findFirst().orElse(null);
+        if (idFuncionarios == null) {
+            System.out.println("Esse funcionário não existe!");
         } else {
             System.out.print("Informe a porcentagem: ");
             double porcentagem = input.nextDouble();
-            idFuncionario.aumentarSalario(porcentagem);
+            idFuncionarios.aumentarSalario(porcentagem);
         }
 
         //LISTAGEM DE FUNCIONÁRIOS
 
         System.out.println();
         System.out.println("LISTA DE FUNCIONÁRIOS: ");
-        for (Funcionario obj : funcionario) {
-            System.out.println(obj);
+        for (Funcionarios dados : funcionario) {
+            System.out.println(dados);
         }
 
         input.close();
     }
-
-    //MÉTODO PARA BUSCA NA LISTA
 
 }
